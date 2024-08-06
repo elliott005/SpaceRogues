@@ -1,0 +1,46 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://dme5oeyd7cktb"]
+
+[ext_resource type="Texture2D" uid="uid://bebylu5di068i" path="res://assets/Foozle_2DS0013_Void_EnemyFleet_2/Nairan/Weapon Effects - Projectiles/PNGs/Nairan - Bolt.png" id="1_wk4qx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgmci"]
+atlas = ExtResource("1_wk4qx")
+region = Rect2(0, 0, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hoikr"]
+atlas = ExtResource("1_wk4qx")
+region = Rect2(9, 0, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y50t6"]
+atlas = ExtResource("1_wk4qx")
+region = Rect2(18, 0, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dnq3j"]
+atlas = ExtResource("1_wk4qx")
+region = Rect2(27, 0, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31je8"]
+atlas = ExtResource("1_wk4qx")
+region = Rect2(36, 0, 9, 9)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgmci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hoikr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y50t6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dnq3j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31je8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]

@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cev6vyrpmlidi"]
+
+[ext_resource type="FontFile" uid="uid://symxtfsortws" path="res://assets/Font/kenvector_future_thin.ttf" id="1_nqqnf"]
+
+[resource]
+Button/fonts/font = ExtResource("1_nqqnf")
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/fonts/font = ExtResource("1_nqqnf")

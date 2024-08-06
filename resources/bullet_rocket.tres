@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://dxjpjguujsyg8"]
+
+[ext_resource type="Texture2D" uid="uid://h4ov4uditj6b" path="res://assets/Foozle_2DS0013_Void_EnemyFleet_2/Nairan/Weapon Effects - Projectiles/PNGs/Nairan - Rocket.png" id="1_eqmu8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6m3i"]
+atlas = ExtResource("1_eqmu8")
+region = Rect2(0, 0, 9, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74jfr"]
+atlas = ExtResource("1_eqmu8")
+region = Rect2(9, 0, 9, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7s4e"]
+atlas = ExtResource("1_eqmu8")
+region = Rect2(18, 0, 9, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6xud"]
+atlas = ExtResource("1_eqmu8")
+region = Rect2(27, 0, 9, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6m3i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74jfr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7s4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6xud")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]

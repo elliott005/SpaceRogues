@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://dm5sskhbd1cy8"]
+
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_2mnsv"]
+[ext_resource type="PackedScene" uid="uid://jf4tp6hvq35v" path="res://scenes/actors/player.tscn" id="1_vdqc1"]
+[ext_resource type="PackedScene" uid="uid://7jxju4a28lj3" path="res://scenes/background.tscn" id="2_mo3uv"]
+[ext_resource type="PackedScene" uid="uid://bt7n2dar0sfg1" path="res://scenes/actors/nairan_fighter.tscn" id="3_txfuq"]
+[ext_resource type="PackedScene" uid="uid://d8yiqrfw7lji" path="res://scenes/actors/nairan_torpedo_ship.tscn" id="4_pigc7"]
+[ext_resource type="PackedScene" uid="uid://hb6l421g2s4g" path="res://scenes/actors/nairan_dreadnought.tscn" id="6_3vjsf"]
+[ext_resource type="AudioStream" uid="uid://d1uclkou21g0b" path="res://assets/Orbital Colossus.mp3" id="7_5g7s7"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_2mnsv")
+
+[node name="Background" parent="." instance=ExtResource("2_mo3uv")]
+
+[node name="Player" parent="." instance=ExtResource("1_vdqc1")]
+position = Vector2(526, 308)
+
+[node name="XP" type="Node" parent="."]
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="NairanFighter" parent="Enemies" instance=ExtResource("3_txfuq")]
+position = Vector2(44, 36)
+
+[node name="NairanFighter2" parent="Enemies" instance=ExtResource("3_txfuq")]
+position = Vector2(1080, 446)
+
+[node name="NairanTorpedoShip" parent="Enemies" instance=ExtResource("4_pigc7")]
+position = Vector2(184, 312)
+
+[node name="NairanDreadnought" parent="Enemies" instance=ExtResource("6_3vjsf")]
+position = Vector2(100.431, 195.5)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("7_5g7s7")
+volume_db = -20.0
+autoplay = true

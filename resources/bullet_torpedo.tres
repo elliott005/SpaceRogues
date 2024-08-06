@@ -1,0 +1,32 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://cmiqnfah1wpxo"]
+
+[ext_resource type="Texture2D" uid="uid://cw8it1ma68njf" path="res://assets/Foozle_2DS0013_Void_EnemyFleet_2/Nairan/Weapon Effects - Projectiles/PNGs/Nairan - Torpedo.png" id="1_vso17"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86wdg"]
+atlas = ExtResource("1_vso17")
+region = Rect2(0, 0, 9, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rose7"]
+atlas = ExtResource("1_vso17")
+region = Rect2(9, 0, 9, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjfqa"]
+atlas = ExtResource("1_vso17")
+region = Rect2(18, 0, 9, 24)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86wdg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rose7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rjfqa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]

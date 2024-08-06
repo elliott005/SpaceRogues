@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://brvnv50jgerbo"
+path="res://.godot/imported/piano.wav-c5d7b31bf50efd745eccc855e8b9b1e5.sample"
+
+[deps]
+
+source_file="res://assets/Level Up!/piano.wav"
+dest_files=["res://.godot/imported/piano.wav-c5d7b31bf50efd745eccc855e8b9b1e5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

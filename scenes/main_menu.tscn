@@ -1,0 +1,265 @@
+[gd_scene load_steps=10 format=3 uid="uid://cpvdu0ifye8g7"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_1kygm"]
+[ext_resource type="Texture2D" uid="uid://rj82tedwayjh" path="res://assets/Foozle_2DS0011_Void_MainShip/Main Ship/Main Ship - Bases/PNGs/Main Ship - Base - Full health.png" id="2_0dy6x"]
+[ext_resource type="PackedScene" uid="uid://7jxju4a28lj3" path="res://scenes/background.tscn" id="2_nvn1t"]
+[ext_resource type="Texture2D" uid="uid://cxt8qojjiivlr" path="res://assets/Foozle_2DS0011_Void_MainShip/Main Ship/Main Ship - Engines/PNGs/Main Ship - Engines - Base Engine.png" id="3_jr0r0"]
+[ext_resource type="Texture2D" uid="uid://dvuolac6dj4ng" path="res://assets/Foozle_2DS0011_Void_MainShip/Main Ship/Main Ship - Weapons/PNGs/Main Ship - Weapons - Auto Cannon cropped.png" id="4_10bxl"]
+[ext_resource type="Texture2D" uid="uid://daqb1km8rhi6r" path="res://assets/Foozle_2DS0011_Void_MainShip/Main Ship/Main Ship - Shields/PNGs/Main Ship - Shields - Front and Side Shield cropped.png" id="5_6g0lu"]
+[ext_resource type="Texture2D" uid="uid://dytsy18a8duqk" path="res://assets/PNG/blue_boxCheckmark.png" id="6_fhh6n"]
+[ext_resource type="Texture2D" uid="uid://54mpueu3upgo" path="res://assets/PNG/blue_boxTick.png" id="7_d3lei"]
+[ext_resource type="AudioStream" uid="uid://bupvv25gwftrn" path="res://assets/b423b42.wav" id="9_hl5hb"]
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1_1kygm")
+
+[node name="Background" parent="." instance=ExtResource("2_nvn1t")]
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(560, 212)
+scale = Vector2(5, 5)
+
+[node name="Shield" type="Sprite2D" parent="Node2D"]
+texture = ExtResource("5_6g0lu")
+
+[node name="Base" type="Sprite2D" parent="Node2D"]
+texture = ExtResource("2_0dy6x")
+
+[node name="Weapon" type="Sprite2D" parent="Node2D"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_10bxl")
+
+[node name="Engine" type="Sprite2D" parent="Node2D"]
+position = Vector2(0, 7.6)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_jr0r0")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="QuitButton" type="Button" parent="CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+text = "Quit"
+
+[node name="SettingsButton" type="Button" parent="CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Settings"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Select engine:"
+
+[node name="EngineSelect" type="OptionButton" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+item_count = 4
+selected = 0
+popup/item_0/text = "Base"
+popup/item_0/id = 0
+popup/item_1/text = "Big Pulse"
+popup/item_1/id = 1
+popup/item_2/text = "Burst"
+popup/item_2/id = 2
+popup/item_3/text = "Supercharged"
+popup/item_3/id = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Select weapon:"
+
+[node name="WeaponSelect" type="OptionButton" parent="CenterContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+item_count = 4
+selected = 0
+popup/item_0/text = "Auto Cannon"
+popup/item_0/id = 0
+popup/item_1/text = "Big Space Gun"
+popup/item_1/id = 1
+popup/item_2/text = "Rockets"
+popup/item_2/id = 2
+popup/item_3/text = "Zapper"
+popup/item_3/id = 3
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Select shield:"
+
+[node name="ShieldSelect" type="OptionButton" parent="CenterContainer/HBoxContainer/VBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+item_count = 4
+selected = 0
+popup/item_0/text = "Front and Side"
+popup/item_0/id = 0
+popup/item_1/text = "Front"
+popup/item_1/id = 1
+popup/item_2/text = "Invincibility"
+popup/item_2/id = 2
+popup/item_3/text = "Round"
+popup/item_3/id = 3
+
+[node name="StartButton" type="TextureButton" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6_fhh6n")
+texture_pressed = ExtResource("7_d3lei")
+texture_hover = ExtResource("7_d3lei")
+texture_focused = ExtResource("7_d3lei")
+
+[node name="Settings" type="TabContainer" parent="CenterContainer"]
+layout_mode = 2
+current_tab = 1
+
+[node name="Music" type="VBoxContainer" parent="CenterContainer/Settings"]
+visible = false
+layout_mode = 2
+
+[node name="Button" type="Button" parent="CenterContainer/Settings/Music"]
+layout_mode = 2
+text = "Reset Music Settings"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/Settings/Music"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/Settings/Music/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+text = "Music Volume"
+
+[node name="MusicVolSlider" type="HSlider" parent="CenterContainer/Settings/Music/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+min_value = -30.0
+max_value = 20.0
+step = 5.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/Settings/Music"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/Settings/Music/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+text = "SFX Volume"
+
+[node name="SfxVolSlider" type="HSlider" parent="CenterContainer/Settings/Music/HBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+min_value = -30.0
+max_value = 20.0
+step = 5.0
+
+[node name="Controls" type="VBoxContainer" parent="CenterContainer/Settings"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HowToRebindLabel" type="Label" parent="CenterContainer/Settings/Controls"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "a to add new binding, lt to reset"
+horizontal_alignment = 1
+
+[node name="ResetControlsButton" type="Button" parent="CenterContainer/Settings/Controls"]
+layout_mode = 2
+text = "Reset Controls Settings"
+
+[node name="LeftStickCheck" type="CheckButton" parent="CenterContainer/Settings/Controls"]
+unique_name_in_owner = true
+layout_mode = 2
+button_pressed = true
+text = "Left stick movement"
+
+[node name="RebindLabel" type="Label" parent="CenterContainer/Settings/Controls"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+horizontal_alignment = 1
+
+[node name="shoot" type="Button" parent="CenterContainer/Settings/Controls"]
+layout_mode = 2
+action_mode = 0
+text = "Shoot"
+
+[node name="ShootBindingsLabel" type="Label" parent="CenterContainer/Settings/Controls"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+horizontal_alignment = 1
+
+[node name="accelerate" type="Button" parent="CenterContainer/Settings/Controls"]
+layout_mode = 2
+action_mode = 0
+text = "Accelerate"
+
+[node name="AccelerateBindingsLabel" type="Label" parent="CenterContainer/Settings/Controls"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+horizontal_alignment = 1
+
+[node name="brake" type="Button" parent="CenterContainer/Settings/Controls"]
+layout_mode = 2
+action_mode = 0
+text = "brake"
+
+[node name="BrakeBindingsLabel" type="Label" parent="CenterContainer/Settings/Controls"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+horizontal_alignment = 1
+
+[node name="toggle_overlay" type="Button" parent="CenterContainer/Settings/Controls"]
+layout_mode = 2
+action_mode = 0
+text = "toggle overlay"
+
+[node name="OverlayLabel" type="Label" parent="CenterContainer/Settings/Controls"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("9_hl5hb")
+autoplay = true
+
+[connection signal="pressed" from="CenterContainer/HBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="item_selected" from="CenterContainer/HBoxContainer/VBoxContainer/EngineSelect" to="." method="_on_engine_select_item_selected"]
+[connection signal="item_selected" from="CenterContainer/HBoxContainer/VBoxContainer2/WeaponSelect" to="." method="_on_weapon_select_item_selected"]
+[connection signal="item_selected" from="CenterContainer/HBoxContainer/VBoxContainer3/ShieldSelect" to="." method="_on_shield_select_item_selected"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CenterContainer/Settings/Music/Button" to="." method="_on_button_pressed"]
+[connection signal="value_changed" from="CenterContainer/Settings/Music/HBoxContainer/MusicVolSlider" to="." method="_on_music_vol_slider_value_changed"]
+[connection signal="value_changed" from="CenterContainer/Settings/Music/HBoxContainer2/SfxVolSlider" to="." method="_on_sfx_vol_slider_value_changed"]
+[connection signal="pressed" from="CenterContainer/Settings/Controls/ResetControlsButton" to="." method="_on_reset_controls_button_pressed"]
+[connection signal="toggled" from="CenterContainer/Settings/Controls/LeftStickCheck" to="." method="_on_left_stick_check_toggled"]
+[connection signal="pressed" from="CenterContainer/Settings/Controls/shoot" to="." method="_on_shoot_pressed"]
+[connection signal="pressed" from="CenterContainer/Settings/Controls/accelerate" to="." method="_on_accelerate_pressed"]
+[connection signal="pressed" from="CenterContainer/Settings/Controls/brake" to="." method="_on_brake_pressed"]
+[connection signal="pressed" from="CenterContainer/Settings/Controls/toggle_overlay" to="." method="_on_toggle_overlay_pressed"]

@@ -1,0 +1,114 @@
+[gd_scene load_steps=17 format=3 uid="uid://ym1nafdbwkco"]
+
+[ext_resource type="Texture2D" uid="uid://ctm7kr6ri58c0" path="res://assets/Foozle_2DS0012_Void_EnemyFleet_1/Kla'ed/Base/PNGs/Kla'ed - Fighter - Base.png" id="1_1vaw0"]
+[ext_resource type="Texture2D" uid="uid://davreaku1duup" path="res://assets/Foozle_2DS0012_Void_EnemyFleet_1/Kla'ed/Destruction/PNGs/Kla'ed - Fighter - Destruction.png" id="1_kmn23"]
+[ext_resource type="Script" path="res://scripts/enemy_template.gd" id="1_ron00"]
+[ext_resource type="PackedScene" uid="uid://b3bevkjtx8xa1" path="res://scenes/components/ai_component.tscn" id="4_nlt0t"]
+[ext_resource type="PackedScene" uid="uid://cemwjn5x6eonl" path="res://scenes/components/health_component.tscn" id="5_fqwyb"]
+[ext_resource type="PackedScene" uid="uid://d1c88dl8fabiw" path="res://scenes/components/gun_component.tscn" id="5_iypwc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jull7"]
+atlas = ExtResource("1_kmn23")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5b7o"]
+atlas = ExtResource("1_kmn23")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vl5p4"]
+atlas = ExtResource("1_kmn23")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0tasc"]
+atlas = ExtResource("1_kmn23")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtvls"]
+atlas = ExtResource("1_kmn23")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3bkc"]
+atlas = ExtResource("1_kmn23")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uv268"]
+atlas = ExtResource("1_kmn23")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8n5nm"]
+atlas = ExtResource("1_kmn23")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kirct"]
+atlas = ExtResource("1_kmn23")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ryuul"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jull7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5b7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vl5p4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0tasc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtvls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g3bkc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uv268")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8n5nm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kirct")
+}],
+"loop": false,
+"name": &"death",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1vaw0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="KlaedFighter" type="Node2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_ron00")
+xp_drop = 10
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ryuul")
+
+[node name="AIComponent" parent="." instance=ExtResource("4_nlt0t")]
+max_speed = -200.0
+turn_radius = 30.0
+super_turn_radius = 60.0
+drift_speed = -150.0
+
+[node name="HealthComponent" parent="." node_paths=PackedStringArray("sprite_anim") instance=ExtResource("5_fqwyb")]
+max_health = 15
+sprite_anim = NodePath("../AnimatedSprite2D")
+
+[node name="GunComponent" parent="." instance=ExtResource("5_iypwc")]
+bullet_damage = 3
+bullet_type = "klaed"
+
+[node name="Node2D" parent="GunComponent/BulletSpawnPoints" index="0"]
+position = Vector2(0, -11)
+
+[editable path="GunComponent"]

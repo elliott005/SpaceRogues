@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dyyw0mslkkvfp"
+path="res://.godot/imported/preview.ogg-79a7af10dfced9e671da45ef5f1fa52a.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Level Up!/preview.ogg"
+dest_files=["res://.godot/imported/preview.ogg-79a7af10dfced9e671da45ef5f1fa52a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

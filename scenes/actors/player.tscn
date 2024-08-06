@@ -1,0 +1,338 @@
+[gd_scene load_steps=31 format=3 uid="uid://jf4tp6hvq35v"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_dyli7"]
+[ext_resource type="Texture2D" uid="uid://ca1gkwbky35e1" path="res://assets/Explosion.png" id="2_0axge"]
+[ext_resource type="Texture2D" uid="uid://c10njjec2ook8" path="res://assets/Foozle_2DS0011_Void_MainShip/Main Ship/Main Ship - Shields/PNGs/Main Ship - Shields - Round Shield cropped.png" id="2_01406"]
+[ext_resource type="Texture2D" uid="uid://rj82tedwayjh" path="res://assets/Foozle_2DS0011_Void_MainShip/Main Ship/Main Ship - Bases/PNGs/Main Ship - Base - Full health.png" id="2_k1ipf"]
+[ext_resource type="Texture2D" uid="uid://u8nrqu558t4n" path="res://icon.svg" id="3_ge83k"]
+[ext_resource type="PackedScene" uid="uid://qrvebswx2jay" path="res://scenes/upgrade_choice.tscn" id="4_0x800"]
+[ext_resource type="Texture2D" uid="uid://cdi6ejtwimjg6" path="res://assets/M484BulletCollection1.png" id="6_2lpa2"]
+[ext_resource type="AudioStream" uid="uid://b4ppb061burqx" path="res://assets/coin10.wav" id="8_exf6c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjrsg"]
+atlas = ExtResource("2_0axge")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xn84b"]
+atlas = ExtResource("2_0axge")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_goibm"]
+atlas = ExtResource("2_0axge")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmx3b"]
+atlas = ExtResource("2_0axge")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4b7lp"]
+atlas = ExtResource("2_0axge")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8abg"]
+atlas = ExtResource("2_0axge")
+region = Rect2(480, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27iaf"]
+atlas = ExtResource("2_0axge")
+region = Rect2(576, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jm3e"]
+atlas = ExtResource("2_0axge")
+region = Rect2(672, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgf33"]
+atlas = ExtResource("2_0axge")
+region = Rect2(768, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8r17l"]
+atlas = ExtResource("2_0axge")
+region = Rect2(864, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lr0x1"]
+atlas = ExtResource("2_0axge")
+region = Rect2(960, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqraf"]
+atlas = ExtResource("2_0axge")
+region = Rect2(1056, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hsq50"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xjrsg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xn84b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_goibm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmx3b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4b7lp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8abg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_27iaf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4jm3e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pgf33")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r17l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lr0x1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqraf")
+}],
+"loop": false,
+"name": &"death",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kt82n"]
+radius = 64.1249
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ne0hx"]
+size = Vector2(28, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6tn4"]
+size = Vector2(76, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g5ril"]
+size = Vector2(68, 64)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cjf24"]
+radius = 54.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ou5eo"]
+radius = 96.0208
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8dyja"]
+radius = 64.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_t673u"]
+particle_flag_disable_z = true
+angle_min = -720.0
+angle_max = 720.0
+direction = Vector3(0, 1, 0)
+spread = 180.0
+initial_velocity_min = 200.0
+initial_velocity_max = 400.0
+gravity = Vector3(0, 300, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pr4b"]
+atlas = ExtResource("6_2lpa2")
+region = Rect2(257, 267, 17, 17)
+
+[node name="Player" type="Node2D" groups=["Player"]]
+script = ExtResource("1_dyli7")
+
+[node name="Sprites" type="Node2D" parent="."]
+scale = Vector2(2, 2)
+
+[node name="Shield" type="Sprite2D" parent="Sprites"]
+texture = ExtResource("2_01406")
+
+[node name="Base" type="Sprite2D" parent="Sprites"]
+texture = ExtResource("2_k1ipf")
+
+[node name="Weapon" type="Sprite2D" parent="Sprites"]
+scale = Vector2(0.5, 0.5)
+
+[node name="Engine" type="Sprite2D" parent="Sprites"]
+position = Vector2(0, 7.6)
+scale = Vector2(0.5, 0.5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+process_mode = 3
+sprite_frames = SubResource("SpriteFrames_hsq50")
+animation = &"death"
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 14
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("CircleShape2D_kt82n")
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("RectangleShape2D_ne0hx")
+
+[node name="ShieldArea2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="front_and_side_Collision" type="CollisionPolygon2D" parent="ShieldArea2D"]
+visible = false
+polygon = PackedVector2Array(-50, 18, -38, -30, 0, -38, 38, -30, 50, 18, 32, 18, 32, -16, -32, -16, -32, 18)
+
+[node name="front_Collision" type="CollisionShape2D" parent="ShieldArea2D"]
+visible = false
+position = Vector2(0, -37)
+shape = SubResource("RectangleShape2D_b6tn4")
+
+[node name="invincibility_Collision" type="CollisionShape2D" parent="ShieldArea2D"]
+visible = false
+shape = SubResource("RectangleShape2D_g5ril")
+
+[node name="round_Collision" type="CollisionShape2D" parent="ShieldArea2D"]
+visible = false
+shape = SubResource("CircleShape2D_cjf24")
+
+[node name="AOEs" type="Node2D" parent="."]
+
+[node name="AOEdamage" type="Area2D" parent="AOEs"]
+collision_layer = 0
+collision_mask = 2
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AOEs/AOEdamage"]
+shape = SubResource("CircleShape2D_ou5eo")
+debug_color = Color(0.96592, 0, 0.48374, 0.42)
+
+[node name="CollectBox" type="Area2D" parent="AOEs"]
+collision_layer = 0
+collision_mask = 8
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AOEs/CollectBox"]
+shape = SubResource("CircleShape2D_8dyja")
+debug_color = Color(2.45467e-06, 0.637225, 0.394847, 0.42)
+
+[node name="Bullets" type="Node" parent="."]
+
+[node name="BulletSpawnPoints" type="Node2D" parent="."]
+
+[node name="BulletSpawnPoint1" type="Node2D" parent="BulletSpawnPoints"]
+position = Vector2(0, -12)
+
+[node name="Sprite2D" type="Sprite2D" parent="BulletSpawnPoints/BulletSpawnPoint1"]
+visible = false
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("3_ge83k")
+
+[node name="LevelUpParticles" type="GPUParticles2D" parent="."]
+process_mode = 3
+emitting = false
+amount = 16
+process_material = SubResource("ParticleProcessMaterial_t673u")
+texture = SubResource("AtlasTexture_8pr4b")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="UpgradeChoices" type="VBoxContainer" parent="CanvasLayer/CenterContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="UpgradeChoice" parent="CanvasLayer/CenterContainer/UpgradeChoices" instance=ExtResource("4_0x800")]
+layout_mode = 2
+
+[node name="UpgradeChoice2" parent="CanvasLayer/CenterContainer/UpgradeChoices" instance=ExtResource("4_0x800")]
+layout_mode = 2
+
+[node name="UpgradeChoice3" parent="CanvasLayer/CenterContainer/UpgradeChoices" instance=ExtResource("4_0x800")]
+layout_mode = 2
+
+[node name="PauseMenu" type="VBoxContainer" parent="CanvasLayer/CenterContainer"]
+process_mode = 3
+layout_mode = 2
+
+[node name="ResumeButton" type="Button" parent="CanvasLayer/CenterContainer/PauseMenu"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+text = "Resume"
+
+[node name="ReturnButton" type="Button" parent="CanvasLayer/CenterContainer/PauseMenu"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Return"
+
+[node name="DeathMenu" type="VBoxContainer" parent="CanvasLayer/CenterContainer"]
+process_mode = 3
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/CenterContainer/DeathMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+text = "You Died!"
+horizontal_alignment = 1
+
+[node name="LevelLabel" type="Label" parent="CanvasLayer/CenterContainer/DeathMenu"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+horizontal_alignment = 1
+
+[node name="DeathReturnButton" type="Button" parent="CanvasLayer/CenterContainer/DeathMenu"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+text = "return to menu"
+
+[node name="CenterContainer2" type="CenterContainer" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Overlay" type="VBoxContainer" parent="CanvasLayer/CenterContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="OverUnderTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="BigBulletTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="HealTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="AOEDamageTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+
+[node name="XpSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_exf6c")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="area_entered" from="ShieldArea2D" to="." method="_on_shield_area_2d_area_entered"]
+[connection signal="area_entered" from="AOEs/CollectBox" to="." method="_on_collect_box_area_entered"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/PauseMenu/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/PauseMenu/ReturnButton" to="." method="_on_return_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/DeathMenu/DeathReturnButton" to="." method="_on_death_return_button_pressed"]
+[connection signal="timeout" from="OverUnderTimer" to="." method="_on_over_under_timer_timeout"]

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://chc2xix0flolv"
+path="res://.godot/imported/glassbell.wav-c9d53b5679face2b1bc0ec4c8197f998.sample"
+
+[deps]
+
+source_file="res://assets/Level Up!/glassbell.wav"
+dest_files=["res://.godot/imported/glassbell.wav-c9d53b5679face2b1bc0ec4c8197f998.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

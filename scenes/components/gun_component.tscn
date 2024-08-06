@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1c88dl8fabiw"]
+
+[ext_resource type="Script" path="res://scripts/gun_component.gd" id="1_0cgyv"]
+
+[node name="GunComponent" type="Node2D"]
+script = ExtResource("1_0cgyv")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Bullets" type="Node" parent="."]
+
+[node name="BulletSpawnPoints" type="Node2D" parent="."]
+
+[node name="Node2D" type="Node2D" parent="BulletSpawnPoints"]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

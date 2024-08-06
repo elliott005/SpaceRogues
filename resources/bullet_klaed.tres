@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://5430rbd7tueq"]
+
+[ext_resource type="Texture2D" uid="uid://bhky155wo5jiq" path="res://assets/Foozle_2DS0012_Void_EnemyFleet_1/Kla'ed/Projectiles/PNGs/Kla'ed - Bullet.png" id="1_hwsc6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bix2w"]
+atlas = ExtResource("1_hwsc6")
+region = Rect2(0, 0, 4, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5egmj"]
+atlas = ExtResource("1_hwsc6")
+region = Rect2(4, 0, 4, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdt5g"]
+atlas = ExtResource("1_hwsc6")
+region = Rect2(8, 0, 4, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6mjf"]
+atlas = ExtResource("1_hwsc6")
+region = Rect2(12, 0, 4, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bix2w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5egmj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdt5g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6mjf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]

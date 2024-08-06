@@ -1,0 +1,178 @@
+[gd_scene load_steps=26 format=3 uid="uid://hb6l421g2s4g"]
+
+[ext_resource type="Script" path="res://scripts/enemy_template.gd" id="1_bvamb"]
+[ext_resource type="Texture2D" uid="uid://ci3ibe2ul1tkb" path="res://assets/Foozle_2DS0013_Void_EnemyFleet_2/Nairan/Destruction/PNGs/Nairan - Dreadnought -  Destruction.png" id="2_0oved"]
+[ext_resource type="Texture2D" uid="uid://bwhv158b04qiw" path="res://assets/Foozle_2DS0013_Void_EnemyFleet_2/Nairan/Designs - Base/PNGs/Nairan - Dreadnought - Base.png" id="2_gp2sk"]
+[ext_resource type="PackedScene" uid="uid://b3bevkjtx8xa1" path="res://scenes/components/ai_component.tscn" id="4_7lwhh"]
+[ext_resource type="PackedScene" uid="uid://d1c88dl8fabiw" path="res://scenes/components/gun_component.tscn" id="5_3xuht"]
+[ext_resource type="PackedScene" uid="uid://cemwjn5x6eonl" path="res://scenes/components/health_component.tscn" id="5_k3ebc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8j3xi"]
+atlas = ExtResource("2_0oved")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sct0x"]
+atlas = ExtResource("2_0oved")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0wyo"]
+atlas = ExtResource("2_0oved")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4sa3b"]
+atlas = ExtResource("2_0oved")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vatk0"]
+atlas = ExtResource("2_0oved")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mi2q0"]
+atlas = ExtResource("2_0oved")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6tocs"]
+atlas = ExtResource("2_0oved")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hyef"]
+atlas = ExtResource("2_0oved")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgtem"]
+atlas = ExtResource("2_0oved")
+region = Rect2(1024, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hgikf"]
+atlas = ExtResource("2_0oved")
+region = Rect2(1152, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ph4c"]
+atlas = ExtResource("2_0oved")
+region = Rect2(1280, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_detrp"]
+atlas = ExtResource("2_0oved")
+region = Rect2(1408, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1q5k"]
+atlas = ExtResource("2_0oved")
+region = Rect2(1536, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1y4d0"]
+atlas = ExtResource("2_0oved")
+region = Rect2(1664, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_huyub"]
+atlas = ExtResource("2_0oved")
+region = Rect2(1792, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_koxxv"]
+atlas = ExtResource("2_0oved")
+region = Rect2(1920, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohbr7"]
+atlas = ExtResource("2_0oved")
+region = Rect2(2048, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xn1yw"]
+atlas = ExtResource("2_0oved")
+region = Rect2(2176, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kgup4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8j3xi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sct0x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y0wyo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4sa3b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vatk0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mi2q0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6tocs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hyef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qgtem")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgikf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ph4c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_detrp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o1q5k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1y4d0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_huyub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_koxxv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohbr7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xn1yw")
+}],
+"loop": false,
+"name": &"death",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gp2sk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="NairanDreadnought" type="Node2D"]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_bvamb")
+xp_drop = 15
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kgup4")
+
+[node name="AIComponent" parent="." instance=ExtResource("4_7lwhh")]
+max_speed = -100.0
+turn_radius = 15.0
+super_turn_radius = 35.0
+drift_speed = -50.0
+
+[node name="HealthComponent" parent="." node_paths=PackedStringArray("sprite_anim") instance=ExtResource("5_k3ebc")]
+max_health = 15
+sprite_anim = NodePath("../AnimatedSprite2D")
+
+[node name="GunComponent" parent="." instance=ExtResource("5_3xuht")]
+shoot_cooldown = 1.0
+bullet_damage = 4
+bullet_type = "torpedo"
+
+[node name="Node2D" parent="GunComponent/BulletSpawnPoints" index="0"]
+position = Vector2(0, -38)
+
+[editable path="GunComponent"]
